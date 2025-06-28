@@ -3,10 +3,7 @@ import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
 import useTheme from '@/hooks/use-theme'
 
-const LightDark: React.FC<{ theme: 'light' | 'dark'; setTheme: (theme: 'light' | 'dark') => void }> = ({
-  theme,
-  setTheme,
-}) => {
+const LightDark: React.FC<{ theme: 'light' | 'dark'; setTheme: (theme: 'light' | 'dark') => void }> = ({ theme, setTheme }) => {
   return (
     <div className='cursor-pointer' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
       {theme === 'dark' ? <Moon /> : <Sun />}
@@ -28,20 +25,11 @@ const Github: React.FC = () => {
   )
 }
 
-const Footer: React.FC<{ theme: 'light' | 'dark'; setTheme: (theme: 'light' | 'dark') => void }> = ({
-  theme,
-  setTheme,
-}) => {
+const Footer: React.FC<{ theme: 'light' | 'dark'; setTheme: (theme: 'light' | 'dark') => void }> = ({ theme, setTheme }) => {
   return (
     <footer className='fixed bottom-0 z-5'>
       <div className='flex justify-between items-center w-screen px-4 pb-8'>
-        <a
-          href='https://youtu.be/0HYm60Mjm0k'
-          rel='noreferrer noopener'
-          target='_blank'
-          className='text-sm'
-          style={{ userSelect: 'none' }}
-        >
+        <a href='https://youtu.be/0HYm60Mjm0k' rel='noreferrer noopener' target='_blank' className='text-sm' style={{ userSelect: 'none' }}>
           命に嫌われている - Iori Kanzaki
         </a>
         <div className='flex items-center gap-4'>
