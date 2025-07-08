@@ -6,4 +6,4 @@
 
 春木只是继续完善了一下歌词渲染位置，增加了一下黑白模式和快捷键以及进度条拖拽问题
 
-预览地址：https://kanji.haruki.blog
+预览地址：https://harukiinharu.github.io/kanji
