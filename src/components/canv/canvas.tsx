@@ -115,7 +115,7 @@ const timeline: TimelineItem[] = [
   { type: 'lyrics', time: 243.5, x: 635, y: 9250, text: 'カンザキイオリ' },
 ]
 
-const chars = '点フツホ問両今クユセエ何集コト求車こぴ聞東成ひそのな祝質正案ぽけっ右土ぜち月返っせゅ拡首つ斐程やぼ治能こめご彦退'.split('')
+const chars = [...new Set(timeline.map((item) => item.text).join(''))].join('').split('')
 
 const PlayPause: React.FC = () => {
   return (
@@ -353,13 +353,13 @@ const AnimateCanvas: React.FC<{ theme: 'light' | 'dark'; isFullscreen: boolean }
               font: `${fontSize * scale}px ${fontFamily}`,
             })
           } else {
-            const relativeDelay = i * 0.1 + item.time - context.time
+            const relativeDelay = i * 0.15 + item.time - context.time
 
             renderer = createCharTypingRender(item.text.charAt(i), item.x * scale, (i * (fontSize + 8) + item.y) * scale, {
               animation: fadeIn(relativeDelay, 0.1, theme),
               font: `${fontSize * scale}px ${fontFamily}`,
               delay: relativeDelay,
-              duration: 0.1,
+              duration: 0.15,
               chars: chars.slice(Math.round(Math.random() * (chars.length - 5))),
             })
           }

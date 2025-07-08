@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "downlevelIteration": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "jsx": "react-jsx",
